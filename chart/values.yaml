@@ -16,28 +16,3 @@ environment:
   verbose: true
   name: "environment-from-composition"
   description: "Created by Krateo Composition"
-
-gitRepository:
-  verbose: true
-  name: "repo-from-composition"
-  apiVersion: "7.2-preview.2"
-  initialize: true
-  defaultBranch: "refs/heads/main"
-
-pipeline:
-  verbose: true
-  apiVersion: "7.2-preview.1"
-  name: pipeline-from-composition
-  folder: "test-folder-kog"                      
-  configuration:
-    path: azure-pipelines.yml
-    repository: 
-      type: azureReposGit
-    type: yaml
-
-pipelinePermission:
-  verbose: true
-  name: pipelinepermission-from-composition
-  apiVersion: "7.2-preview.1"
-  allPipelines:
-    authorized: false
