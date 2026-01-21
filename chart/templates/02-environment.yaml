@@ -2,6 +2,7 @@ apiVersion: azuredevops.krateo.io/v1alpha1
 kind: Environment
 metadata:
   name: {{ .Values.environment.name | lower }}
+  namespace: demo-system
   annotations:
     krateo.io/connector-verbose: "{{ .Values.environment.verbose }}"
 spec:

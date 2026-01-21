@@ -2,6 +2,7 @@ apiVersion: azuredevops.krateo.io/v1alpha1
 kind: TeamProject
 metadata:
   name: {{ .Values.teamProject.name | lower }}
+  namespace: demo-system
   annotations:
     krateo.io/connector-verbose: "{{ .Values.teamProject.verbose }}"
 spec:
