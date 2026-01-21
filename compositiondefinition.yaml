@@ -2,9 +2,9 @@ apiVersion: core.krateo.io/v1alpha1
 kind: CompositionDefinition
 metadata:
   name: azuredevops-starter
-  namespace: azuredevops-system
+  namespace: default
 spec:
   chart:
-    repo: azuredevops-starter
-    url: https://leonardovicentini.com/helm-charts/charts
+    #repo: azuredevops-starter
+    url: oci://ghcr.io/vicentinileonardo/azuredevops-starter/azuredevops-starter
     version: 0.0.1

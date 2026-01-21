@@ -4,7 +4,7 @@ metadata:
   labels:
     krateo.io/composition-version: v0-0-1
   name: azuredevops-starter
-  namespace: azuredevops-system
+  namespace: default
 spec:
   azureDevOps:
     organization: "krateo-kog"

@@ -1,6 +1,278 @@
 {
-  "type": "object",
-  "$schema": "http://json-schema.org/draft-07/schema",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "azureDevOps": {
+      "additionalProperties": false,
+      "properties": {
+        "organization": {
+          "default": "krateo-kog",
+          "title": "organization",
+          "type": "string"
+        }
+      },
+      "required": [
+        "organization"
+      ],
+      "title": "azureDevOps",
+      "type": "object"
+    },
+    "environment": {
+      "additionalProperties": false,
+      "properties": {
+        "description": {
+          "default": "Created by Krateo Composition",
+          "title": "description",
+          "type": "string"
+        },
+        "name": {
+          "default": "environment-from-composition",
+          "title": "name",
+          "type": "string"
+        },
+        "verbose": {
+          "default": true,
+          "title": "verbose",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "verbose",
+        "name",
+        "description"
+      ],
+      "title": "environment",
+      "type": "object"
+    },
+    "gitRepository": {
+      "additionalProperties": false,
+      "properties": {
+        "apiVersion": {
+          "default": "7.2-preview.2",
+          "title": "apiVersion",
+          "type": "string"
+        },
+        "defaultBranch": {
+          "default": "refs/heads/main",
+          "title": "defaultBranch",
+          "type": "string"
+        },
+        "initialize": {
+          "default": true,
+          "title": "initialize",
+          "type": "boolean"
+        },
+        "name": {
+          "default": "repo-from-composition",
+          "title": "name",
+          "type": "string"
+        },
+        "verbose": {
+          "default": true,
+          "title": "verbose",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "verbose",
+        "name",
+        "apiVersion",
+        "initialize",
+        "defaultBranch"
+      ],
+      "title": "gitRepository",
+      "type": "object"
+    },
+    "pipeline": {
+      "additionalProperties": false,
+      "properties": {
+        "apiVersion": {
+          "default": "7.2-preview.1",
+          "title": "apiVersion",
+          "type": "string"
+        },
+        "configuration": {
+          "additionalProperties": false,
+          "properties": {
+            "path": {
+              "default": "azure-pipelines.yml",
+              "title": "path",
+              "type": "string"
+            },
+            "repository": {
+              "additionalProperties": false,
+              "properties": {
+                "type": {
+                  "default": "azureReposGit",
+                  "title": "type",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "title": "repository",
+              "type": "object"
+            },
+            "type": {
+              "default": "yaml",
+              "title": "type",
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "repository",
+            "type"
+          ],
+          "title": "configuration",
+          "type": "object"
+        },
+        "folder": {
+          "default": "test-folder-kog",
+          "title": "folder",
+          "type": "string"
+        },
+        "name": {
+          "default": "pipeline-from-composition",
+          "title": "name",
+          "type": "string"
+        },
+        "verbose": {
+          "default": true,
+          "title": "verbose",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "verbose",
+        "apiVersion",
+        "name",
+        "folder",
+        "configuration"
+      ],
+      "title": "pipeline",
+      "type": "object"
+    },
+    "pipelinePermission": {
+      "additionalProperties": false,
+      "properties": {
+        "allPipelines": {
+          "additionalProperties": false,
+          "properties": {
+            "authorized": {
+              "default": false,
+              "title": "authorized",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "authorized"
+          ],
+          "title": "allPipelines",
+          "type": "object"
+        },
+        "apiVersion": {
+          "default": "7.2-preview.1",
+          "title": "apiVersion",
+          "type": "string"
+        },
+        "name": {
+          "default": "pipelinepermission-from-composition",
+          "title": "name",
+          "type": "string"
+        },
+        "verbose": {
+          "default": true,
+          "title": "verbose",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "verbose",
+        "name",
+        "apiVersion",
+        "allPipelines"
+      ],
+      "title": "pipelinePermission",
+      "type": "object"
+    },
+    "teamProject": {
+      "additionalProperties": false,
+      "properties": {
+        "capabilities": {
+          "additionalProperties": false,
+          "properties": {
+            "processTemplate": {
+              "additionalProperties": false,
+              "properties": {
+                "templateTypeId": {
+                  "default": "6b724908-ef14-45cf-84f8-768b5384da45",
+                  "title": "templateTypeId",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "templateTypeId"
+              ],
+              "title": "processTemplate",
+              "type": "object"
+            },
+            "versioncontrol": {
+              "additionalProperties": false,
+              "properties": {
+                "sourceControlType": {
+                  "default": "Git",
+                  "title": "sourceControlType",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sourceControlType"
+              ],
+              "title": "versioncontrol",
+              "type": "object"
+            }
+          },
+          "required": [
+            "versioncontrol",
+            "processTemplate"
+          ],
+          "title": "capabilities",
+          "type": "object"
+        },
+        "description": {
+          "default": "Created by Krateo Composition",
+          "title": "description",
+          "type": "string"
+        },
+        "name": {
+          "default": "project-from-composition",
+          "title": "name",
+          "type": "string"
+        },
+        "verbose": {
+          "default": true,
+          "title": "verbose",
+          "type": "boolean"
+        },
+        "visibility": {
+          "default": "private",
+          "title": "visibility",
+          "type": "string"
+        }
+      },
+      "required": [
+        "verbose",
+        "name",
+        "description",
+        "visibility",
+        "capabilities"
+      ],
+      "title": "teamProject",
+      "type": "object"
+    }
+  },
   "required": [
     "azureDevOps",
     "teamProject",
@@ -9,244 +281,5 @@
     "pipeline",
     "pipelinePermission"
   ],
-  "properties": {
-    "azureDevOps": {
-      "type": "object",
-      "title": "Azure DevOps configuration",
-      "required": [
-        "organization"
-      ],
-      "properties": {
-        "organization": {
-          "type": "string",
-          "title": "Replace with your Azure DevOps organization name",
-          "default": "krateo-kog"
-        }
-      }
-    },
-    "teamProject": {
-      "type": "object",
-      "title": "Team Project configuration",
-      "required": [
-        "name",
-        "visibility"
-      ],
-      "properties": {
-        "verbose": {
-          "type": "boolean",
-          "title": "Enable verbose logging",
-          "default": "true"
-        },
-        "name": {
-          "type": "string",
-          "title": "Name of the Azure DevOps Team Project",
-          "default": "project-from-composition"
-        },
-        "description": {
-          "type": "string",
-          "title": "Description for the Azure DevOps Team Project",
-          "default": "Created by Krateo Composition"
-        },
-        "visibility": {
-          "type": "string",
-          "title": "Visibility of the Azure DevOps Team Project",
-          "default": "private"
-        },
-        "capabilities": {
-          "type": "object",
-          "title": "Capabilities for the Azure DevOps Team Project",
-          "required": [],
-          "properties": {
-            "versioncontrol": {
-              "type": "object",
-              "title": "Version control configuration",
-              "required": [],
-              "properties": {
-                "sourceControlType": {
-                  "type": "string",
-                  "title": "Type of source control",
-                  "default": "Git"
-                }
-              }
-            },
-            "processTemplate": {
-              "type": "object",
-              "title": "Process template configuration",
-              "required": [],
-              "properties": {
-                "templateTypeId": {
-                  "type": "string",
-                  "title": "ID of the process template type",
-                  "default": "6b724908-ef14-45cf-84f8-768b5384da45"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "environment": {
-      "type": "object",
-      "title": "Environment configuration",
-      "required": [
-        "name",
-        "description"
-      ],
-      "properties": {
-        "verbose": {
-          "type": "boolean",
-          "title": "Enable verbose logging",
-          "default": "true"
-        },
-        "name": {
-          "type": "string",
-          "title": "Name of the Azure DevOps Environment",
-          "default": "environment-from-composition"
-        },
-        "description": {
-          "type": "string",
-          "title": "Description for the Azure DevOps Environment",
-          "default": "Created by Krateo Composition"
-        }
-      }
-    },
-    "gitRepository": {
-      "type": "object",
-      "title": "Git Repository configuration",
-      "required": [
-        "name",
-        "apiVersion"
-      ],
-      "properties": {
-        "verbose": {
-          "type": "boolean",
-          "title": "Enable verbose logging",
-          "default": "true"
-        },
-        "name": {
-          "type": "string",
-          "title": "Name of the Azure DevOps Git Repository",
-          "default": "repo-from-composition"
-        },
-        "apiVersion": {
-          "type": "string",
-          "title": "Version of the API to use",
-          "default": "7.2-preview.2"
-        },
-        "initialize": {
-          "type": "boolean",
-          "title": "Whether to initialize the repository",
-          "default": "true"
-        },
-        "defaultBranch": {
-          "type": "string",
-          "title": "Default branch for the Git Repository",
-          "default": "refs/heads/main"
-        }
-      }
-    },
-    "pipeline": {
-      "type": "object",
-      "title": "Pipeline configuration",
-      "required": [
-        "apiVersion",
-        "name",
-        "folder"
-      ],
-      "properties": {
-        "verbose": {
-          "type": "boolean",
-          "title": "Enable verbose logging",
-          "default": "true"
-        },
-        "apiVersion": {
-          "type": "string",
-          "title": "Version of the API to use",
-          "default": "7.2-preview.1"
-        },
-        "name": {
-          "type": "string",
-          "title": "Name of the Azure DevOps Pipeline",
-          "default": "pipeline-from-composition"
-        },
-        "folder": {
-          "type": "string",
-          "title": "Folder where the pipeline will be created",
-          "default": "test-folder-kog"
-        },
-        "configuration": {
-          "type": "object",
-          "title": "Configuration for the pipeline",
-          "required": [],
-          "properties": {
-            "path": {
-              "type": [
-                "string"
-              ],
-              "title": "Path to the pipeline YAML file within the repository",
-              "default": "azure-pipelines.yml"
-            },
-            "repository": {
-              "type": "object",
-              "title": "Repository configuration for the pipeline",
-              "required": [],
-              "properties": {
-                "type": {
-                  "type": [
-                    "string"
-                  ],
-                  "title": "Type of the repository, e.g., gitHub, azureReposGit, etc.",
-                  "default": "azureReposGit"
-                }
-              }
-            },
-            "type": {
-              "type": [
-                "string"
-              ],
-              "title": "Type of the pipeline configuration, e.g., yaml, designer, etc.",
-              "default": "yaml"
-            }
-          }
-        }
-      }
-    },
-    "pipelinePermission": {
-      "type": "object",
-      "title": "PipelinePermission configuration",
-      "required": [
-        "name",
-        "apiVersion"
-      ],
-      "properties": {
-        "verbose": {
-          "type": "boolean",
-          "title": "Enable verbose logging",
-          "default": "true"
-        },
-        "name": {
-          "type": "string",
-          "title": "Name of the Azure DevOps PipelinePermission",
-          "default": "pipelinepermission-from-composition"
-        },
-        "apiVersion": {
-          "type": "string",
-          "title": "Version of the API to use",
-          "default": "7.2-preview.1"
-        },
-        "allPipelines": {
-          "type": "object",
-          "title": "Whether to authorize all pipelines",
-          "required": [],
-          "properties": {
-            "authorized": {
-              "type": "boolean",
-              "title": "Whether to authorize all pipelines",
-              "default": "false"
-            }
-          }
-        }
-      }
-    }
-  }
+  "type": "object"
 }
