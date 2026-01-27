@@ -23,11 +23,37 @@
           "title": "version",
           "type": "string",
           "x-crdgen-identifier-name": "Version1"
+        },
+        "version2": {
+          "default": 250,
+          "description": "version of the WordPress application",
+          "enum": [
+            241,
+            250,
+            271,
+            272,
+            273
+          ],
+          "title": "version2",
+          "type": "integer"
+        },
+        "version3": {
+          "default": {"key1":"value1", "key2":"value2"},
+          "description": "version of the WordPress application",
+          "enum": [
+            {"key1":"valueA", "key2":"valueB"},
+            {"key1":"value1", "key2":"value2"},
+            {"key1":"valueX", "key2":"valueY"}
+          ],
+          "title": "version3",
+          "type": "object"
         }
       },
       "required": [
         "organization",
-        "version"
+        "version",
+        "version2",
+        "version3"
       ],
       "title": "azureDevOps",
       "type": "object"
