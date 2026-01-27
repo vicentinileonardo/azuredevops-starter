@@ -26,7 +26,8 @@
         }
       },
       "required": [
-        "organization"
+        "organization",
+        "version"
       ],
       "title": "azureDevOps",
       "type": "object"
@@ -137,8 +138,7 @@
   "required": [
     "azureDevOps",
     "teamProject",
-    "environment",
-    "version"
+    "environment"
   ],
   "type": "object"
 }
