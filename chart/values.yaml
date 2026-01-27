@@ -5,6 +5,7 @@ azureDevOps:
   version3:
     key1: "value1"
     key2: "value2"
+  version4: "1.2.3"
 
 teamProject:
   verbose: true

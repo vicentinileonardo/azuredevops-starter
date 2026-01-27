@@ -47,13 +47,26 @@
           ],
           "title": "version3",
           "type": "object"
+        },
+        "version4": {
+          "default": "1.2.3",
+          "description": "version of the WordPress application",
+          "enum": [
+            "1.2.3",
+            "2.4.1",
+            "2.5.0",
+            "2.7.1"
+          ],
+          "title": "version4",
+          "type": "string"
         }
       },
       "required": [
         "organization",
         "version",
         "version2",
-        "version3"
+        "version3",
+        "version4"
       ],
       "title": "azureDevOps",
       "type": "object"
