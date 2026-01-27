@@ -9,6 +9,20 @@
           "default": "krateo-kog",
           "title": "organization",
           "type": "string"
+        },
+        "version": {
+          "default": "v25.0.0",
+          "description": "version of the WordPress application",
+          "enum": [
+            "v24.2.11",
+            "v25.0.0",
+            "v27.1.1",
+            "v27.1.2",
+            "v27.1.3"
+          ],
+          "title": "version",
+          "type": "string",
+          "x-crdgen-identifier-name": "Version1"
         }
       },
       "required": [
@@ -123,7 +137,8 @@
   "required": [
     "azureDevOps",
     "teamProject",
-    "environment"
+    "environment",
+    "version"
   ],
   "type": "object"
 }

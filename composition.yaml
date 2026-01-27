@@ -1,13 +1,14 @@
-apiVersion: composition.krateo.io/v0-0-6
+apiVersion: composition.krateo.io/v0-0-7
 kind: AzuredevopsStarter
 metadata:
   labels:
-    krateo.io/composition-version: v0-0-6
+    krateo.io/composition-version: v0-0-7
   name: azuredevops-starter
   namespace: demo-system
 spec:
   azureDevOps:
     organization: "krateo-kog"
+    version: v25.0.0
   
   teamProject:
     verbose: true

@@ -1,5 +1,6 @@
 azureDevOps:
   organization: "krateo-kog"
+  version: v25.0.0
 
 teamProject:
   verbose: true
